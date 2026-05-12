@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fetch - Criação Simples</title>
+</head>
+<body>
+
+	<div>
+		<label for="inputNome">Nome</label>
+		<input type="text" id="inputNome" />
+	</div>
+
+	<div>
+		<label for="inputAutor(a)">Autor(a)</label>
+		<input type="text" id="inputAutor(a)" />
+	</div>
+
+    <div>
+		<label for="inputEditora">Editora</label>
+		<input type="text" id="inputEditora" />
+	</div>
+
+    <div>
+		<label for="inputAno">Ano</label>
+		<input type="int" id="inputAno" />
+	</div>
+
+
+	<button type="button" onclick="listarLivro()">
+		Listar Livro
+	</button>
+
+	<script type="text/javascript">
+
+		async function listarLivro() {
+
+			let inputnome = document.getElementById("inputNome");
+			let inputautor = document.getElementById("inputAutor(a)");
+			let inputeditora = document.getElementById("inputEditora");
+			let inputano = document.getElementById("inputAno");
+
+			let nome = inputnome.value;
+			let autor = inputautor.value;
+			let editora = inputeditora.value;
+			let ano = parseInt(inputano.value); // Como o valor é int, temos que converter para int
+
+			if (!nome) {
+				alert("Nome inválido!");
+				return;
+			}
+
+			if (!autor) {
+				alert("Autor(a) inválido(a)!");
+				return;
+			}
+
+            if (!editora) {
+				alert("Editora inválida!");
+				return;
+			}
+
+            if (!ano) {
+				alert("Ano inválido!");
+				return;
+			}
+
+			let livro = {
+				'nome': nome,
+				'autor': autor,
+                'editora': editora,
+                'ano': ano
+			};
+
+			try {
+
+				let response = await fetch("https://academico.espm.br/testeapi/livro/criar", {
+					method: "POST",
+					body: JSON.stringify(livro),
+					headers: {
+						"content-type": "application/json"
+					}
+				});
+
+				if (!response.ok) {
+					alert("Ocorreu um erro ao registrar o livro :(");
+					return;
+				}
+
+				inputnome.value = "";
+				inputautor.value = "";
+				inputeditora.value = "";
+				inputano.value = "";
+
+				alert("Livro cadastrado com sucesso!");
+
+			} catch (ex) {
+				alert("Ocorreu um erro de rede ao registrar o livro: " + ex.message)
+			}
+
+		}
+
+	</script>
+
+</body>
+</html>
