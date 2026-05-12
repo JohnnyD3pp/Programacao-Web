@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fetch - Listagem em HTML Dinâmico com Encode</title>
+</head>
+<body>
+
+	<button type="button" onclick="listarPessoas()">
+		Listar Pessoas
+	</button>
+
+	<div id="divListagem"></div>
+
+	<script type="text/javascript">
+		let regExpAmp = /\&/g, regExpLt = /</g, regExpGt = />/g; // Serve para o encode trabalhar
+
+		function encode(x) { // Essa função encode serve para substutir tudo que for '&, >, <' pelos seus códigos
+			return (x ? x.replace(regExpAmp, "&amp;").replace(regExpLt, "&lt;").replace(regExpGt, "&gt;") : "");
+		}
+
+		async function listarPessoas() {
+
+			let response = await fetch("https://academico.espm.br/testeapi/listar");
+
+			let lista = await response.json();
+
+			let html = `<h1>Pessoas cadastradas: ${lista.length}</h1>`; // A crase é o f'' do pytho | o ${} só funciona dentro da crase (valor de uma variável f'{a}')
+
+			for (let i = 0; i < lista.length; i++) { // Faço um html no qual vou concatenando os dados da lista
+				html += `
+					<hr />
+					<h2>
+						<i>(${lista[i].id})</i> ${encode(lista[i].nome)}
+					</h2>
+					<p>
+						E-mail: ${encode(lista[i].email)}
+					</p>
+				`; // Html dinâmico, mostra o id, o nome e o email da pessoa a cada linha | <i> aparecer em itálico
+			}
+
+			let divListagem = document.getElementById("divListagem");
+
+			divListagem.innerHTML = html; // O html dentro do div vai para a tela
+
+		}
+
+	</script>
+
+</body>
+</html>

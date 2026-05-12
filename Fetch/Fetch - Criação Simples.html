@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fetch - Criação Simples</title>
+</head>
+<body>
+
+	<div>
+		<label for="inputNome">Nome</label> <!-- Label serve para apontar / explicar que aquele input tem uma descrição -->
+		<input type="text" id="inputNome" />
+	</div>
+
+	<div>
+		<label for="inputEmail">E-mail</label>
+		<input type="email" id="inputEmail" />
+	</div>
+
+	<button type="button" onclick="criarPessoa()">
+		Criar Pessoa
+	</button>
+
+	<script type="text/javascript">
+
+		async function criarPessoa() { // Precisa ter um async em uma função se eu for usar um await
+
+			let inputNome = document.getElementById("inputNome");
+			let inputEmail = document.getElementById("inputEmail");
+
+			let nome = inputNome.value;
+			let email = inputEmail.value;
+
+			if (!nome) { // if (!nome) = Se o nome estiver vazio de esse alerta
+				alert("Nome inválido!");
+				return;
+			}
+
+			if (!email) { // O mesmo de cima, se não tiver um email
+				alert("E-mail inválido!");
+				return;
+			}
+
+			let pessoa = { // Crie um objeto (para mandar para o servidor)
+				'nome': nome, // As aspas são opcionais, mas bom deixar né
+				'email': email
+			};
+
+			try {
+
+				let response = await fetch("https://academico.espm.br/testeapi/criar", { // await serve para esperar uma ação demorada terminar antes de continuar o código.
+					method: "POST", // O fetch busca coisas, mas esse fetch está enviando dados (com o método post)
+					body: JSON.stringify(pessoa), // Conteúdo que estou enviando (quero enviar este objeto, precisamos transformar ele em JSON, usando JSON.stringify())
+					headers: { // Esta dizendo para o servidor que estamos enviando um JSON
+						"content-type": "application/json"
+					}
+				});
+
+				if (!response.ok) { // Se a resposta não está OK (erro)
+					alert("Ocorreu um erro ao criar a pessoa :(");
+					return;
+				}
+
+				inputNome.value = ""; // Ao criar, deixa o campo vazio novamente
+				inputEmail.value = "";
+
+				alert("Pessoa criada com sucesso!");
+
+			} catch (ex) { // Se nada disso der bom (try), vamos para essa linha de erro (esse catch é o except)
+				alert("Ocorreu um erro de rede ao criar a pessoa: " + ex.message)
+			}
+
+		}
+
+	</script>
+
+</body>
+</html>
