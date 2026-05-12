@@ -1,0 +1,290 @@
+<!-- Nome | E-mail | Idade | Peso
+Endereço | Número | Bairro
+CEP | Cidade | Estado -->
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Elementos Básicos de Entrada de Dados</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+
+	<div class="container-fluid">
+		<div class="row">
+
+			<div class="col-md-3">
+				<div class="mb-3">
+					<label for="inputTextoSimples" class="form-label">Nome</label>
+					<input type="text" id="inputTextoSimples" class="form-control" value="Teste" readonly/>
+				</div>
+			</div>
+
+            <div class="col-md-3">
+				<div class="mb-3">
+					<label for="inputTextoEmail" class="form-label">E-mail</label>
+					<input type="email" id="inputTextoEmail" class="form-control"/>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="mb-3">
+					<label for="inputTextoNumerico" class="form-label">Idade</label>
+					<input type="number" id="inputTextoNumerico" class="form-control" placeholder="Apenas números" />
+				</div>
+			</div>
+
+            <div class="col-md-3">
+				<div class="mb-3">
+					<label for="inputTextoPeso" class="form-label">Peso</label>
+					<input type="number" id="inputTextoPeso" class="form-control" placeholder="Apenas números" />
+				</div>
+			</div>
+            
+            <div class="col-md-3">
+				<div class="mb-3">
+					<label for="inputTextoEndereco" class="form-label">Endereço</label>
+					<input type="text" id="inputTextoEndereco" class="form-control"/>
+				</div>
+			</div>
+
+            <div class="col-md-3">
+				<div class="mb-3">
+					<label for="inputTextoNumero" class="form-label">Número</label>
+					<input type="text" id="inputTextoNumero" class="form-control"/>
+				</div>
+			</div>
+
+            <div class="col-md-3">
+				<div class="mb-3">
+					<label for="inputTextoBairro" class="form-label">Bairro</label>
+					<input type="text" id="inputTextoBairro" class="form-control" />
+				</div>
+			</div>
+
+            <div class="col-md-3">
+				<div class="mb-3">
+					<label for="inputTextoCEP" class="form-label">CEP</label>
+					<input type="text" id="inputTextoCEP" class="form-control" />
+				</div>
+			</div>
+
+            <div class="col-md-3">
+				<div class="mb-3">
+					<label for="inputTextoCidade" class="form-label">Cidade</label>
+					<input type="text" id="inputTextoCEP" class="form-control"/>
+				</div>
+			</div>
+
+            <div class="col-md-3">
+				<div class="mb-3">
+					<label for="inputTextoEstado" class="form-label">Estado</label>
+					<input type="text" id="inputTextoEstado" class="form-control"/>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="mb-3">
+					<label for="inputTextoData" class="form-label">Data</label>
+					<input type="date" id="inputTextoData" class="form-control" />
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="mb-3">
+					<label for="inputTextoSenha" class="form-label"> Senha</label>
+					<input type="password" id="inputTextoSenha" class="form-control" />
+				</div>
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<div class="col-md-3">
+				<div class="mb-3">
+					<label for="selectOpcoes" class="form-label">Menu de Opções</label>
+					<select id="selectOpcoes" class="form-select">
+						<option value="">Selecione...</option>
+						<option value="123">Opção A</option>
+						<option value="456">Opção B</option>
+						<option value="789">Opção C</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="1" id="inputCheck">
+					<label class="form-check-label" for="inputCheck">
+						Caixa de Seleção
+					</label>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<button type="button" onclick="validarCampos()" class="btn btn-primary">Validar Campos</button>
+			</div>
+
+		</div>
+
+	</div>
+
+	<script>
+
+		function validarCampos() {
+			// Obtenção e validação básica de campos de texto simples
+			let campo = document.getElementById("inputTextoSimples");
+			let valor = campo.value;
+
+			if (!valor) {
+				console.log("Texto Simples vazio!");
+				return;
+			} else {
+				console.log("Texto Simples: " + valor);
+			}
+
+            campo = document.getElementById("inputTextoEmail");
+			valor = campo.value;
+
+			if (!valor) {
+				console.log("Texto Email vazio!");
+				return;
+			} else {
+				console.log("Texto Email: " + valor);
+			}
+
+			// Obtenção e validação básica de campos de texto númericos
+			campo = document.getElementById("inputTextoNumerico");
+			// Repare que o que importa é o valor numérico, não a string! :)
+			valor = parseInt(campo.value);
+
+			if (isNaN(valor)) {
+				console.log("Texto Numérico vazio!");
+				return;
+			} else {
+				console.log("Texto Numérico: " + valor);
+			}
+
+            campo = document.getElementById("inputTextoPeso");
+			valor = parseInt(campo.value);
+
+			if (isNaN(valor)) {
+				console.log("Texto Peso vazio!");
+				return;
+			} else {
+				console.log("Texto Peso: " + valor);
+			}
+
+            campo = document.getElementById("inputTextoEndereco");
+			valor = campo.value;
+
+			if (!valor) {
+				console.log("Texto Endereco vazio!");
+				return;
+			} else {
+				console.log("Texto Endereco: " + valor);
+			}
+
+            campo = document.getElementById("inputTextoNumero");
+			valor = campo.value;
+
+			if (!valor) {
+				console.log("Texto Numero vazio!");
+				return;
+			} else {
+				console.log("Texto Numero: " + valor);
+			}
+
+            campo = document.getElementById("inputTextoBairro");
+			valor = campo.value;
+
+			if (!valor) {
+				console.log("Texto Bairro vazio!");
+				return;
+			} else {
+				console.log("Texto Bairro: " + valor);
+			}
+
+            campo = document.getElementById("inputTextoCEP");
+			valor = campo.value;
+
+			if (!valor) {
+				console.log("Texto CEP vazio!");
+				return;
+			} else {
+				console.log("Texto CEP: " + valor);
+			}
+
+            campo = document.getElementById("inputTextoCidade");
+			valor = campo.value;
+
+			if (!valor) {
+				console.log("Texto Cidade vazio!");
+				return;
+			} else {
+				console.log("Texto Cidade: " + valor);
+			}
+
+            campo = document.getElementById("inputTextoEstado");
+			valor = campo.value;
+
+			if (!valor) {
+				console.log("Texto Estado vazio!");
+				return;
+			} else {
+				console.log("Texto Estado: " + valor);
+			}
+
+			// Obtenção e validação básica de campos de texto com data
+			campo = document.getElementById("inputTextoData");
+			valor = campo.value;
+
+			if (!valor) {
+				console.log("Texto Data vazio!");
+				return;
+			} else {
+				console.log("Texto Data: " + valor);
+			}
+
+			// Obtenção e validação básica de campos de texto de senha
+			campo = document.getElementById("inputTextoSenha");
+			valor = campo.value;
+
+			if (!valor) {
+				console.log("Texto Senha vazio!");
+				return;
+			} else {
+				console.log("Texto Senha: " + valor);
+			}
+
+			// Obtenção e validação básica de campos menu de opções (listas)
+			campo = document.getElementById("selectOpcoes");
+			// Como sabemos que os valores das opções são sempre números inteiros,
+			// vamos utilizar o mesmo processo de validação de campos de texto numéricos.
+			// Mas, se soubéssemos que os valores não são numéricos, bastaria utilizar
+			// o mesmo processo de validação de uma caixa de texto simples! :)
+			valor = parseInt(campo.value);
+
+			if (isNaN(valor)) {
+				console.log("Menu de Opções vazio!");
+				return;
+			} else {
+				console.log("Menu de Opções: " + valor);
+			}
+
+			// Obtenção e validação básica de caixas de seleção
+			campo = document.getElementById("inputCheck");
+			valor = campo.checked;
+			console.log("Caixa de Seleção: " + valor);
+		}
+
+	</script>
+
+</body>
+</html>
