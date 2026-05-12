@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0px;
+        }
+
+        img {
+			max-width: 100%;
+		}
+
+        .secao1 {
+            background-image: url('https://static0.gamerantimages.com/wordpress/wp-content/uploads/2022/08/minecraft-4.jpg?w=1600&h=900&fit=crop');
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 100px 20px;
+            color: white;
+        }
+
+        .div1 {
+            background-color: transparent;
+            max-width: 400px;
+            text-align: left;
+            margin: 0px auto 0px 0px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .link1 {
+            display: inline-block;
+            background-color: rgb(17, 178, 33);
+            font-size: 15px;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+
+        .imginicial{
+            max-width: 100%;
+            padding: 0px auto auto 0px;
+        }
+
+        .cor-mine {
+            color: rgb(58, 166, 0);
+            font-weight: bold
+        }
+
+        .margem-artificial {
+            margin-bottom: 20px;
+        }
+
+        .secao2 {
+            background-image: url('https://i.redd.it/u9uix42ykuj51.png');
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 100px 20px;
+            color: white;
+        }
+
+        .card1 {
+            background-color: transparent;
+            max-width: 600px;
+            font-size: 10px;
+            font-weight: bold;
+            padding-bottom: 20px;
+        }
+
+        .card2 {
+            background-color: transparent;
+            max-width: 400px;
+            font-size: 15px;
+            margin: 0px 0px 0px auto;
+            padding-bottom: 20px;
+        }
+
+        .card-title-colorido {
+            color: rgb(0, 42, 255);
+            font-weight: bold;
+        }
+
+        .h2-cor {
+            color: rgb(144, 240, 1);
+        }
+
+        .secao3 {
+            background-image: url('https://i.redd.it/9k34wurajlwe1.png');
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 100px 20px;
+            color: white;
+        }
+
+        .div3 {
+            text-align: center;
+            margin: auto;
+        }
+
+        .secao4 {
+            background-image: url('https://i.redd.it/hey-i-just-realised-that-minecraft-dropped-wallpapers-for-v0-z0m1zk8f2dud1.jpg?width=3840&format=pjpg&auto=webp&s=553c9b9a05d500ac5234011a84f1fb120e8b9559');
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 100px 20px;
+            color: white;
+        }
+
+        .div4 {
+            max-width: 400px;
+            text-align: center;
+            padding-bottom: 25px;
+            margin: auto;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .cardfinal {
+            background-color: transparent;
+        }
+
+        .h5-cor {
+            font-weight: bold;
+            color: rgb(242, 0, 137);
+        }
+
+        .secao5 {
+            background-image: url('https://i.redd.it/tthbnrc4g7yd1.png');
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 100px 0px;
+            color: white;
+        }
+
+        .div5 {
+            max-width: 500px;
+            text-align: center;
+            margin: 0px, auto, 0px, 0px;
+        }
+
+        .linkfinal {
+            display: inline-block;
+            background-color: rgb(17, 178, 33);
+            font-size: 15px;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            padding: 5px 10px;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="secao1">
+
+        <div class="imginicial">
+                <img width="45" src="https://cdn.pixabay.com/photo/2016/11/11/14/49/minecraft-1816996_640.png"/>
+        </div>
+
+        <div class="div1">
+            <p class='margem-artificial'>Minecraft</p>
+            <h1 class="cor-mine margem-artificial">O jogo que mudou uma geração</h1>
+            <p>Minecraft é um jogo eletrônico sandbox de sobrevivência de 2011 desenvolvido e publicado pela
+                desenvolvedora sueca Mojang Studios. Originalmente criado por Markus "Notch" Persson usando a linguagem
+                de programação Java</p>
+
+            <a class="link1" href="https://www.minecraft.net/pt-br/about-minecraft">
+                Saiba mais!
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="container-fluid secao2">
+
+        <div class="row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+                <div class="card1">
+                    <div class="card-body">
+                        <h2 class="card-title-colorido">Um mundo de oportunidades</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card2">
+                    <div class="card-body">
+                        <p class="card-title">
+                        <p>Explore seus próprios mundos, sobreviva à noite e crie tudo o que puder imaginar! Explore e
+                            crie seu caminho em um mundo infinito, que pode ser construído com um bloco de cada vez.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-6 col-lg-4 espacador-coluna">
+                <div class="fundo-coluna">
+                    <p>
+                        <img width="45"
+                            src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/4/40/Diamond_Axe_JE3_BE3.png/revision/latest/scale-to-width/360?cb=20200226193844" />
+                    </p>
+                    <h2 class="h2-cor">
+                        Reúna recursos!
+                    </h2>
+                    <p>
+                        A jornada típica começa batendo em uma árvore para coletar madeira. O resto de sua aventura no
+                        Minecraft depende de você, seja extraindo minérios preciosos ou procurando materiais raros. Só
+                        não se esqueça de estocar comida!
+                    </p>
+                    <a class="linkrow" href="https://www.minecraft.net/pt-br/marketplace">
+                        MarketPlace
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4 espacador-coluna">
+                <div class="fundo-coluna">
+                    <p>
+                        <img width="45" src="https://minecraft.wiki/images/Diamond_Sword_JE3_BE3.png?24296" />
+                    </p>
+                    <h2 class="h2-cor">
+                        Sobreviva à noite!
+                    </h2>
+                    <p>
+                        Quando o sol se põe, multidões hostis aparecem. Você vai enfrentá-las ou dormir a noite toda? E
+                        lembre-se: está sempre escuro no subsolo... Acenda as tochas e prepare sua armadura e sua espada
+                        para enfrentar os monstros que podem aparecer.
+                    </p>
+
+                    <a class="linkrow" href="https://www.minecraft.net/pt-br/articles">
+                        Notícias
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4 espacador-coluna">
+                <div class="fundo-coluna">
+                    <p>
+                        <img width="45"
+                            src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/e/e7/Diamond_Pickaxe_JE3_BE3.png/revision/latest/scale-to-width/360?cb=20250628224016" />
+                    </p>
+                    <h2 class="h2-cor">
+                        Construa coisas incríveis!
+                    </h2>
+                    <p>
+                        Minecraft é o melhor jogo de construção. Crie ferramentas, construa um abrigo simples ou projete
+                        sua base com redstone. É possível construir uma base no Nether? Só há uma maneira de saber.
+                    </p>
+
+                    <a class="linkrow" href="https://www.minecraft.net/pt-br/download">
+                        Download
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="secao3">
+        <h1 class="margem-artificial h5-cor">Visão da gameplay</h1>
+
+        <div class="div3">
+            <img
+                src="https://preview.redd.it/something-interesting-happens-when-you-use-night-vision-v0-y3wpkqpsh8if1.png?width=1080&crop=smart&auto=webp&s=46f8fbfa702dcff4928933199d450aaee7a2ee13" />
+        </div>
+    </div>
+
+    <div class="container-fluid secao4">
+        <div class="div4">
+            <h1>Conheça mais sobre o Minecraft!</h1>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-6">
+                <h5 class="h5-cor">É um jogo entre plataformas?</h5>
+                <p>Sim, o Minecraft é um jogo entre plataformas, o que significa que você pode jogá-lo com seus amigos mesmo que os dispositivos sejam diferentes.</p>
+
+                <h5 class="h5-cor">Em quais dispositivos é possível jogar</h5>
+                <p>Você pode jogar Minecraft em dispositivos com Windows 10 e 11, Xbox One, Xbox Series S e X, PlayStation 4 e 5, Nintendo Switch, Android, iOS e Windows Mobile.</p>
+
+                <h5 class="h5-cor">Qual é o objetivo do Minecraft?</h5>
+                <p>Como o Minecraft é um jogo do tipo livre, não há um objetivo específico no jogo, mas é isso que o torna incrível! No Minecraft, você pode construir, explorar ou se concentrar em sobreviver.</p>
+            </div>
+
+            <div class="col-sm-6">
+                <img src="https://preview.redd.it/vibrant-visuals-is-epic-v0-i3d9omhffose1.png?auto=webp&s=2dccefa079d2722faeca214403ee4272bc07acbc"/>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="secao5">
+        <div class="div5">
+            <h2 class="h5-cor">Informações adicionais!</h2>
+            <p>Mais algumas curiosidades antes que você vá se aventurar</p>
+        </div>
+
+        <div class='container-fluid'>
+            <div class='row principal'>
+
+                <div class='col-sm-4'>
+                    <h3 class="h5-cor">Introdução</h3>
+                    <p>Tudo o que você precisa saber antes de começar a jogar o Minecraft.</p>
+                    <a class="linkfinal" href="https://www.minecraft.net/pt-br/minecraft-tips-for-beginners#getting_started">
+                        Começar Agora
+                    </a>
+
+                </div>
+                <div class="col-sm-4">
+                    <h3 class="h5-cor">Para iniciantes</h3>
+                    <p>Dicas e truques úteis para sobreviver e criar no mundo superior e além.</p>
+                    <a class="linkfinal" href="https://www.minecraft.net/pt-br/minecraft-tips-for-beginners#before_you_begin">
+                        Explorar Dicas
+                    </a>
+
+                </div>
+
+                <div class="col-sm-4">
+                    <h3 class="h5-cor">Aumente seu nível!</h3>
+                    <p>Para os jogadores que querem levar sua experiência para outra dimensão.</p>
+                    <a class="linkfinal" href="https://www.minecraft.net/pt-br/minecraft-tips-for-beginners#level_up">
+                        Saiba Mais
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
